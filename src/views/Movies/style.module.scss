@@ -1,0 +1,14 @@
+@import "../../assets/scss/colors.scss";
+
+.homeContainer{
+    min-height: 100vh;
+    background-color: $primary;
+}
+
+.inputContainer{
+    margin-top: 7rem;
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

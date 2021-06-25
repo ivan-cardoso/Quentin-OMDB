@@ -1,0 +1,16 @@
+@import "../../assets/scss/colors.scss";
+ 
+
+.movieInput{
+    border : none; 
+    height: 3rem;
+    width: 25rem;
+    font-size: 1.3rem;
+    border-radius: 2rem;
+    padding: 1rem;
+    background-color: $secondary;
+}
+
+input:focus, textarea:focus, select:focus{
+    outline: none;
+}
