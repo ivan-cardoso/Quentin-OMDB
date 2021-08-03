@@ -9,7 +9,7 @@ import Movies from "./Movies/"
 import SingleMovie from "./SingleMovie/SingleMovie"
 import UserFavourites from "./UserFavourites"
 import CreateUser from "./CreateUser"
-import UserLogin from "./UserLogin"
+import UserLogin from "./UserLogin/Index"
 import SearchUsers from "./SearchUsers"
 import SearchUsersFavourites from "./SearchUsersFavourites"
 
@@ -43,16 +43,16 @@ const App = () => {
             <div style={{marginTop : "7rem"}}>
                 <Switch>
                     <Route exact path={"/"} />
-                    <Route path={"/create-user"} component={CreateUser} />
-                    <Route path={"/login"}   component={UserLogin} />
+                    <Route exact path={"/create-user"} component={CreateUser} />
+                    <Route exact path={"/login"} component={UserLogin} />
                     
 
-                    <Route  path={"/user/search"} component={SearchUsers}/>
-                    <Route path={"/search/:id"} render={(props)=> <SearchUsersFavourites id={props.match.params.id} />}/>
+                    <Route  exact path={"/user/search"} component={SearchUsers}/>
+                    <Route  exact path={"/search/:id"} render={(props)=> <SearchUsersFavourites id={props.match.params.id} />}/>
                     {user.id ? 
                     <>
                         <Route exact path={"/movies"} component={Movies}/>
-                        <Route path={"/movies/:id"} render={(props) => <SingleMovie id={props.match.params.id}/>} /> 
+                        <Route exact path={"/movies/:id"} render={(props) => <SingleMovie id={props.match.params.id}/>} /> 
                         <Route exact path={"/user/:id"} render={(props) => <UserFavourites id={props.match.params.id} />} />
                     </> : null}
 

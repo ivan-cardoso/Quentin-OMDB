@@ -1,0 +1,30 @@
+@import "../../assets/scss/colors.scss";
+.loginSection{
+    min-height: 100vh;
+    background-color: $primary;
+}
+
+.loginContainer{
+    height:33rem;
+    // background-color: rgb(158, 74, 74);
+}
+.loginRow{
+    align-items: center;
+    height: 100%;
+}
+
+.formControlContainer{
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.formControl{
+    // background-color: rgb(107, 102, 102);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 70%;
+    height: 100%;
+    padding: 1.2rem;
+}

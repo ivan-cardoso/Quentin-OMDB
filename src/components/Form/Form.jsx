@@ -1,18 +1,17 @@
 import React from 'react'
 import {Button} from "react-bootstrap"
+import s from "./style.module.scss" 
 
 const Form = ({ title, buttonText, handleSubmit, handleChange }) => {
     return (
         <div>
             <form action="submit" onSubmit={handleSubmit} >
-                <h4>{title}</h4>
-                <label htmlFor="" style={{ width: "10rem" }} >Email</label>
-                <input type="email" name="email" onChange={handleChange} required/> <br />
-
-                <label htmlFor="" style={{ width: "10rem" }} >Password</label>
-                <input type="password" name="password" onChange={handleChange} required /> <br />
-
-                <Button type="submit">{buttonText}</Button>
+                <h4 className={`${s.formTitle}`} >{title}</h4>
+                <div className={`${s.formControlsContainer}`}>
+                    <input className={`${s.formInput}`} type="email" name="email" onChange={handleChange} required placeholder="Email"/> <br />
+                    <input className={`${s.formInput}`} type="password" name="password" onChange={handleChange} placeholder="Password" required /> <br />
+                    <button className={`${s.formInputBtn}`} type="submit">{buttonText}</button>
+                </div>
             </form>
         </div>
     )

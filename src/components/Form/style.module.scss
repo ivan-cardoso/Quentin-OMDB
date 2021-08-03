@@ -1,0 +1,51 @@
+@import "../../assets/scss/colors.scss";
+
+.formTitle{
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: $fifth;
+}
+
+.formInput{
+    background-color: transparent;
+    color: $thirth;
+    border: none;
+    border-bottom: 3px solid #bbbaba;
+    width: 100%;
+    padding: .5rem;
+    margin: .5rem 0 ;
+    font-weight: 500;
+}
+.formInput::placeholder{
+    color: #bbbaba;
+    border: none;
+}
+
+.formControlsContainer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.formInputBtn{
+    margin: 1.5rem 0; 
+    width: 80%;
+    border: none;
+    border-radius:20px;
+    padding: .5rem;
+    align-self: center;
+    background-color: $secondary
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active
+{
+ -webkit-box-shadow: 0 0 0 30px rgba(255, 255, 255, 0) inset !important;
+}
+
+input:-internal-autofill-selected {
+    appearance: menulist-button;
+    background-color: transparent;
+    background-image: none !important;
+    color: transparent;
+}
