@@ -7,6 +7,7 @@ router.get("/", (req, res, next)=>{
     User.findAll().then((data) =>{
         res.status(200).send(data)
     })
+    .catch((err)=> next(err))
 })
 
 
@@ -16,6 +17,7 @@ router.get("/search", (req, res, next)=>{
     }).then((data) =>{
         res.status(200).send(data)
     })
+    .catch((err)=> next(err))
 })
 
 

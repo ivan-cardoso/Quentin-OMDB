@@ -6,6 +6,10 @@ import {logoutUser, setUser} from "../../store/user"
 import {useHistory} from "react-router-dom"
 import {Button} from "react-bootstrap"
 
+import mia from "../../utils/mia.svg"
+import reanimation from "../../utils/reanimation.svg"
+import logout from "../../utils/logout.svg"
+
 
 const NavBar = () => {
     const history = useHistory()
@@ -27,27 +31,40 @@ const NavBar = () => {
                 <div className="container">
                     <div className="d-flex justify-content-between align-items-center">
                     <div className="d-flex align-items-center ">
-                            <Link to={`/user/${user.id}`}>
+                            {/* <Link to={`/user/${user.id}`}>
                                 <Button variant="dark" >FAVOURITES</Button>
-                            </Link>
-                            <h5 className="m-0 ml-2" >{capitalizeUsername}</h5>
+                            </Link> */}
+
+                                {/* <Button variant="danger" >MOVIES</Button> */}
+                                <h2 className={`${s.quentinTitle} `} >
+                                    <Link to={`/movies`} className={`${s.link} `}>
+                                        Quentin
+                                    </Link>
+                                    </h2>
+                            {/* <h5 className="m-0 ml-2" >{capitalizeUsername}</h5> */}
                         </div>
                         <div className="d-flex align-items-center ">
-                            <Link to={`/movies`}>
+                            {/* <Link to={`/movies`}>
                                 <Button variant="danger" >MOVIES</Button>
-                            </Link>
+                            </Link> */}
                         </div>
-                        <div>
-                            <div className="d-flex align-items-center">
-                                
-                            <Link to={"/user/search"}>
-                                <Button variant="light" className="m-0 mr-4 " >SEARCH USERS</Button>
+                        
+                        <div className={s.navBarIconsContainer}>
+                            <Link to={`/user/search`}>
+                                <img className={`${s.navbarIcon}`} src={mia} alt={mia} srcset="" />    
+                                <p>Users</p>
                             </Link>
 
-                            <Link to={"/login"} onClick={handleLogout} >
-                                <Button>LOGOUT</Button>
+                            <Link to={`/user/${user.id}`}>
+                                <img className={`${s.navbarIcon}`} src={reanimation} alt={mia} srcset="" />    
+                                <p style={{marginRight : "10px"}}>Favs</p>
                             </Link>
-                            </div>
+
+
+                            <Link to={"/login"} onClick={handleLogout} >
+                                <img className={`${s.navbarIcon}`} src={logout} alt={mia} srcset="" />    
+                                <p>Logout</p>
+                            </Link>
                         </div>
                     </div>
                 </div>

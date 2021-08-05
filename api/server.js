@@ -55,7 +55,7 @@ passport.deserializeUser(function(id, done){
 app.use("/api", routes);
 
 // db.sync({force : true }).then(() => {
-db.sync().then(() => {
+db.sync({force : false }).then(() => {
   app.listen(PORT, () => {
     console.log("Escuchando en el puerto ", PORT);
   });

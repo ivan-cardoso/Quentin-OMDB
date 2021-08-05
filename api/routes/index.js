@@ -11,6 +11,7 @@ router.use("/favourites", favourites)
 router.post("/register", (req, res, next) =>{
     User.create(req.body)
     .then((data) => res.status(201).send(data))
+    .catch((err)=> next(err))
 })
 
 router.post("/auth", passport.authenticate("local"), (req, res)=>{
@@ -27,6 +28,7 @@ router.get("/me", (req, res)=>{
         return res.sendStatus(401)
     }
     res.send(req.user)
+    .catch((err)=> next(err))
 })
 
 module.exports = router

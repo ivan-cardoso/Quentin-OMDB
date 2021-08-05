@@ -11,6 +11,7 @@ router.get("/:id", (req, res, next)=>{
         .then((data) =>{
         res.status(200).send(data)
     })
+    .catch((err)=> next(err))
 })
 
 router.post("/", (req, res, next)=>{

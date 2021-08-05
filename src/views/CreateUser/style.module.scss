@@ -25,11 +25,12 @@
     flex-direction: column;
     justify-content: space-around;
     width: 70%;
-    min-height: 18rem;
+    height: 100%;
     padding: 1.2rem;
+    min-height: 15rem;
 }
 
-.quentinTitle{
+.loginQuentinTitle{
     color: $fourth;
     text-shadow: 2px 2px 1px $fifth;
     font-style: italic;
@@ -49,17 +50,9 @@
     filter: brightness(0.2);
 }
 
-.notAlreadyLogin{
-    color: $fifth;
-    text-align: center;
-    font-weight: 500;
-    text-decoration: none;
-}
-
 .createUserForm{
     min-height: 15rem;
 }
-
 .userInvalidSection{
     height: 2.5rem;
     display: flex;

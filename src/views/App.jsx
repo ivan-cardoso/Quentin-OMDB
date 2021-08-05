@@ -8,13 +8,14 @@ import NavBar from "./Bars/NavBar"
 import Movies from "./Movies/"
 import SingleMovie from "./SingleMovie/SingleMovie"
 import UserFavourites from "./UserFavourites"
-import CreateUser from "./CreateUser"
+import CreateUser from "./CreateUser/CreateUser"
 import UserLogin from "./UserLogin/Index"
 import SearchUsers from "./SearchUsers"
 import SearchUsersFavourites from "./SearchUsersFavourites"
 
 import { useSelector, useDispatch } from "react-redux"
 import {setUser} from "../store/user"
+import Home from './Home/Index'
 
 
 const App = () => {
@@ -40,11 +41,11 @@ const App = () => {
     return (
         <>
             <NavBar/> 
-            <div style={{marginTop : "7rem"}}>
+            <div style={{marginTop : "4rem"}}>
                 <Switch>
-                    <Route exact path={"/"} />
-                    <Route exact path={"/create-user"} component={CreateUser} />
+                    {/* <Route exact path={"/"} /> */}
                     <Route exact path={"/login"} component={UserLogin} />
+                    <Route exact path={"/create-user"} component={CreateUser} />
                     
 
                     <Route  exact path={"/user/search"} component={SearchUsers}/>

@@ -12,3 +12,55 @@
     
     background-color: $secondary;
 }
+.quentinTitle a{
+    color: $fourth;
+    text-shadow: 2px 2px 1px $fifth;
+    font-style: italic;
+    font-size: 3.4rem;
+    font-weight: 500;
+    font-family: fantasy;
+    letter-spacing: 0.2rem;
+}
+.quentinTitle{
+    transition: all .3s ease;
+}
+.quentinTitle:hover{
+    transition: all .3s ease;
+    transform: scale(1.04);
+}
+.link:hover{
+    text-decoration: none;
+
+}
+
+.navbarIcon{
+    width: 3.5rem;
+    height: 3.5rem;
+    transition: all .5s ease;
+}
+.navbarIcon:hover{
+    transition: all .5s ease;
+    transform: scale(1.1);
+}
+
+.navBarIconsContainer{
+    display: flex;
+    width: 18rem;
+    justify-content: space-between;
+    align-items: center;
+}
+.navBarIconsContainer a:hover{
+    text-decoration:none ;
+}
+.navBarIconsContainer p{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: $primary;
+    font-weight: 500;
+    transition: all .3s ease;
+}
+.navBarIconsContainer p:hover{
+    font-weight: 600;
+    transition: all .3s ease;
+}

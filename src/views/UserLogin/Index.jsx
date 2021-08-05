@@ -9,6 +9,9 @@ import { setUser } from "../../store/user"
 
 import Form from "../../components/Form/Form"
 import s from "./style.module.scss" 
+import dancing from '../../utils/dancing.svg'
+import dancing2 from '../../utils/dancing2.png'
+import hurt from '../../utils/reanimation.svg'
 
 const UserLogin = () => {
     const user = useSelector((state) => state.user)
@@ -29,10 +32,12 @@ const UserLogin = () => {
         })
         .catch(err => {
             setNoAuth(true)
-            console.log("NO AUTORIZED", err)})
+            console.log("NO AUTORIZED", err)
+        })
     }
 
     const handleChange = (e) => {
+        setTimeout(()=> setNoAuth(false), 800)
         const key = e.target.name
         const value = e.target.value
         setUserLogin({ ...userLogin, [key]: value })
@@ -43,24 +48,32 @@ const UserLogin = () => {
             <div className={`container ${s.loginContainer}`}>
             <div className={`row ${s.loginRow} `}>
 
-                <div className="col-12 col-md-6">
-                    <h2>Quentin</h2>
+                <div className={`col-12 col-md-6 ${s.titleHomeContainer}`}>
+                    <h2 className={`${s.quentinTitle} `} >Quentin</h2>
+                    {/* <img src={hurt} alt="" srcset="" /> */}
+                    <img src={dancing2} alt="" srcset="" className={s.dancingSvg} />
                 </div>
 
                 <div className={`col-12 col-md-6 ${s.formControlContainer}`} >
                     <div className={`${s.formControl}`} >
                         <Form
-                            title={"QUENTIN IS WAITING FOR YOU"}
+                            title={"Quentin is waiting for you!"}
                             buttonText={"Sing in"}
                             handleSubmit={handleSubmit}
                             handleChange={handleChange}
                             />
-                        {noAuth ? 
-                            <Alert variant="danger">Incorrect User</Alert> 
-                            : <></>}
                         <Link to={"create-user"}>
-                            <p>Not already logged in? Create account</p>
+                            <p className={`${s.notAlreadyLogin}`}>
+                                Not already logged in? Create account
+                            </p>
                         </Link>
+                        <div className={`${s.userInvalidSection}`}>
+                            {noAuth ? 
+                                <div className={`${s.userInvalidContainer}`}>
+                                    <p className={`${s.userInvalid}`}>Invalid User</p> 
+                                </div>
+                            : <></>}
+                        </div>
                     </div>
                 </div>
             </div>
